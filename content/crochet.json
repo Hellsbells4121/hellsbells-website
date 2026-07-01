@@ -2,14 +2,14 @@
   "items": [
     {
       "name": "Squeakz the Dragon",
-      "price": "$50 + postage",
+      "price": "$60 + postage",
       "status": "Sold",
       "description": "A teal-and-cream dragon, and the very first sale from the craft streams.",
       "image": "/assets/squeakz-thumb.jpg"
     },
     {
       "name": "Little Owl",
-      "price": "",
+      "price": "$15 + Postage",
       "status": "In collection",
       "description": "Mint green with a purple flower crown, perched and watching the room.",
       "image": "/assets/owl-thumb.jpg"
