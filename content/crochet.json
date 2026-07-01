@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": "Squeakz the Dragon",
+      "price": "$50 + postage",
+      "status": "Sold",
+      "description": "A teal-and-cream dragon, and the very first sale from the craft streams.",
+      "image": "/assets/squeakz-thumb.jpg"
+    },
+    {
+      "name": "Little Owl",
+      "price": "",
+      "status": "In collection",
+      "description": "Mint green with a purple flower crown, perched and watching the room.",
+      "image": "/assets/owl-thumb.jpg"
+    },
+    {
+      "name": "Tariq the Griffin",
+      "price": "",
+      "status": "In progress",
+      "description": "Part eagle, part lion, all chat's idea.",
+      "image": ""
+    },
+    {
+      "name": "Rubert the Goblin",
+      "price": "",
+      "status": "In progress",
+      "description": "Small, a bit mischievous, exactly as requested.",
+      "image": ""
+    },
+    {
+      "name": "Rambi the Dinocorn",
+      "price": "",
+      "status": "In progress",
+      "description": "Half dinosaur, half unicorn, entirely chat's fault.",
+      "image": ""
+    },
+    {
+      "name": "Nessie",
+      "price": "",
+      "status": "In progress",
+      "description": "Still unnamed beyond that — suggestions welcome on stream.",
+      "image": ""
+    }
+  ]
+}

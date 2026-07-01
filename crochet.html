@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crochet — Hellsbells</title>
+<meta name="description" content="Amigurumi dragons, griffins, and goblins, crocheted live on stream. Browse finished creatures and current commissions.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="lantern-glow"></div>
+<div class="fireflies"></div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <svg class="flame" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 2 7 7.5 7 12.5C7 15.5 9 18 12 18C15 18 17 15.5 17 12.5C17 10.8 16.2 9.4 15.3 8.3C15.3 8.3 15.6 10 14.5 11C14.5 11 14.7 9.5 13.5 7.8C12.6 6.5 12.3 5 12.3 5C12.3 5 11.8 6.2 12 7.3C12.2 8.3 11.5 8.8 11.2 8.2C10.9 7.6 11 6.5 11 6.5C11 6.5 9 9 9 12C9 13.5 9.9 14.8 11 15.3C10.5 14.7 10.3 13.9 10.5 13.1C10.8 12 12 11.5 12 11.5C12 11.5 11.7 12.7 12.2 13.3C12.6 13.8 13.5 13.7 13.7 12.9C13.9 12.2 13.5 11.5 13.5 11.5C14.5 12.3 15 13.4 14.7 14.6C14.4 15.7 13.3 16.3 12.3 16.1" stroke="#3FD0C9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="9.5" y="17.5" width="5" height="4" rx="0.6" stroke="#D97A2F" stroke-width="1.3"/>
+        <circle cx="12" cy="19.5" r="0.9" fill="#D97A2F"/>
+      </svg>
+      Hellsbells
+    </a>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crochet.html" class="active">Crochet</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">56 years of crochet, now live on stream</div>
+      <h1>Amigurumi, stitched in front of an audience.</h1>
+      <p style="max-width:600px; font-size:1.05rem;">Every creature starts as a chat vote and ends up either finding a home or joining the shelf. Fantasy amigurumi is the current run — dragons, griffins, goblins, and whatever else the chat picks next.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag teal">The gallery</div>
+        <h2>Everything on the hook (and off it)</h2>
+        <p class="dim">Sold pieces, personal keepers, and chat-voted works in progress — updated as they happen.</p>
+      </div>
+      <div class="grid" id="crochet-gallery">
+        <div class="card"><p class="dim">Loading…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container center" style="max-width:600px; margin:0 auto;">
+      <h2>Adopt a creature for bits</h2>
+      <p class="dim">During streams, finished creatures go up for adoption through a bits raffle — watch live to catch the next one, or get in touch about a custom commission.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+        <a href="https://twitch.tv/Hellsbells_AU" class="btn btn-primary" target="_blank" rel="noopener">Watch a craft stream</a>
+        <a href="contact.html" class="btn btn-outline">Ask about a commission</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <ul class="footer-links">
+      <li><a href="https://twitch.tv/Hellsbells_AU" target="_blank" rel="noopener">Twitch</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-note">&copy; <span id="year"></span> Hellsbells · Atherton Tablelands, QLD</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/crochet-render.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

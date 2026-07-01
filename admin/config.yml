@@ -1,0 +1,65 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://hellsbells4121.org"
+display_url: "https://hellsbells4121.org"
+
+collections:
+  - name: "crochet"
+    label: "Crochet Gallery"
+    files:
+      - file: "content/crochet.json"
+        label: "Crochet Items"
+        name: "crochet"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{name}} — {{status}}"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string", required: false, hint: "e.g. $50 + postage — leave blank if not for sale"}
+              - {label: "Status", name: "status", widget: "select", options: ["Available", "Sold", "In progress", "In collection"]}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Photo", name: "image", widget: "image", required: false}
+
+  - name: "music"
+    label: "Music"
+    files:
+      - file: "content/music.json"
+        label: "Albums"
+        name: "music"
+        fields:
+          - label: "Albums"
+            name: "albums"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Cover art", name: "cover", widget: "image", required: false}
+              - {label: "Spotify link", name: "spotify_url", widget: "string", required: false}
+              - {label: "Apple Music link", name: "apple_music_url", widget: "string", required: false}
+              - {label: "YouTube link", name: "youtube_url", widget: "string", required: false}
+
+  - name: "books"
+    label: "Books"
+    files:
+      - file: "content/books.json"
+        label: "Books"
+        name: "books"
+        fields:
+          - label: "Books"
+            name: "books"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Cover", name: "cover", widget: "image", required: false}
+              - {label: "Amazon link", name: "amazon_url", widget: "string", required: false}
+              - {label: "IngramSpark link", name: "ingramspark_url", widget: "string", required: false}

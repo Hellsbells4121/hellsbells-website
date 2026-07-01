@@ -1,0 +1,26 @@
+{
+  "books": [
+    {
+      "title": "The Lost Joey of Mount Hypipamee",
+      "description": "High in the mossy rainforest of Mt Hypipamee on the Atherton Tablelands, a magical fantasy creature named Thistlewink keeps watch over the creatures of the region. With soft wings and a brave heart, she brings calm to the wild places that need her most.",
+      "cover": "/assets/book-lost-joey.jpg",
+      "amazon_url": "https://www.amazon.com.au/dp/1764547438",
+      "ingramspark_url": ""
+    },
+    {
+      "title": "Whispers in the Water",
+      "description": "Beneath the shimmering surface of Lake Eacham, a mysterious whisper calls to Thistlewink, the tiny colour-shifting fae creature with a brave heart. When strange ripples and fading magic disturb the peaceful rainforest, Thistlewink and her loyal Shimmerling must journey into a hidden world below the water: glowing caverns, ancient secrets, and gentle underwater creatures reveal a mystery only she can solve. A tender, enchanting adventure about courage, friendship, and the quiet magic that lives in nature.",
+      "cover": "/assets/book-whispers.jpg",
+      "amazon_url": "https://www.amazon.com.au/dp/1764547462",
+      "ingramspark_url": ""
+    },
+    {
+      "title": "The Little Housekeeper's Journal",
+      "author": "HPCreates",
+      "description": "A charming keepsake journal for the little ones who love to help around the house.",
+      "cover": "/assets/book-housekeeper.jpg",
+      "amazon_url": "https://www.amazon.com.au/dp/B0GNCR6FYW",
+      "ingramspark_url": ""
+    }
+  ]
+}

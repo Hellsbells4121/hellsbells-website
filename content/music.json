@@ -1,0 +1,76 @@
+{
+  "albums": [
+    {
+      "title": "Electric Empath",
+      "description": "Includes Electric Brew, Forty Three, and Canopy Dreamer — a track about Thistlewink meeting a tree kangaroo in the canopy.",
+      "cover": "/assets/album-electric-empath.jpg",
+      "spotify_url": "https://open.spotify.com/album/32JKI6BtmuJiLvJHWIslh2",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Crafting Songs",
+      "description": "Includes Pineapple Halo and Procrochetinator — music made for the same hands that hold a crochet hook.",
+      "cover": "/assets/album-crafting-songs.jpg",
+      "spotify_url": "https://open.spotify.com/album/2fHexBF2oiv5ISvldEOAl5",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "I Make Magic",
+      "description": "A single about the quiet spellwork of making things by hand.",
+      "cover": "/assets/single-i-make-magic.jpg",
+      "spotify_url": "https://open.spotify.com/album/1HoU5XJ3Z9EnitmpqRbLJ3",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Coffee",
+      "description": "A warm, quiet single for slow mornings.",
+      "cover": "/assets/single-coffee.jpg",
+      "spotify_url": "https://open.spotify.com/album/4qVhU75aMPGpl32Wukwz3S",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Procrastinator",
+      "description": "A cheeky single about putting things off — perfect company for anyone mid-scroll instead of mid-task.",
+      "cover": "/assets/single-procrastinator.jpg",
+      "spotify_url": "",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Pineapple Halo",
+      "description": "A bold, playful single — pineapple on pizza and proud of it.",
+      "cover": "/assets/single-pineapple-rebel.jpg",
+      "spotify_url": "",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Forty Three",
+      "description": "A warm, tender single about love that's settled into itself.",
+      "cover": "/assets/single-forty-three.jpg",
+      "spotify_url": "https://open.spotify.com/album/1afH30B3ZD37UJG6T2xITk",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    },
+    {
+      "title": "Women Who Write",
+      "description": "A tribute to the storytellers and word-weavers making their own magic.",
+      "cover": "/assets/single-women-who-write.jpg",
+      "spotify_url": "https://open.spotify.com/album/78lFfMtWeyT9sz5klKkDx3",
+      "apple_music_url": "",
+      "youtube_url": "",
+      "tracks": []
+    }
+  ]
+}
