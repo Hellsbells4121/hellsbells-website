@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Copper Fairway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<style>
+  :root {
+    --copper: #b8703f;
+    --copper-light: #d99a67;
+    --copper-dark: #8a5228;
+    --teal: #1b4b47;
+    --teal-light: #2c6b64;
+    --teal-dark: #0f2f2c;
+    --cream: #f4ead9;
+    --ink: #241a12;
+    --gold: #e8c87a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: radial-gradient(ellipse at top, var(--teal-light) 0%, var(--teal-dark) 70%);
+    font-family: 'Lato', sans-serif;
+    color: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 14px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-shadow: 0 0 14px rgba(232,200,122,0.45);
+    font-size: clamp(24px, 5vw, 34px);
+    margin: 4px 0 2px;
+    text-align: center;
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--copper-light);
+    margin: 0 0 14px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .hud {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    padding: 0 4px;
+  }
+  .hud span b { color: var(--cream); font-family: 'Lato', sans-serif; }
+  canvas {
+    background: transparent;
+    border-radius: 14px;
+    max-width: 100%;
+    touch-action: none;
+    box-shadow: 0 0 0 3px var(--copper-dark), 0 0 30px rgba(0,0,0,0.5), inset 0 0 60px rgba(0,0,0,0.3);
+  }
+  .power-wrap {
+    width: 100%;
+    max-width: 700px;
+    height: 10px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 6px;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid var(--copper-dark);
+  }
+  .power-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--teal-light), var(--copper), var(--gold));
+    transition: width 0.05s linear;
+  }
+  .hint {
+    font-size: 12.5px;
+    color: rgba(244,234,217,0.65);
+    margin-top: 8px;
+    text-align: center;
+  }
+  .panel {
+    background: rgba(15,47,44,0.6);
+    border: 1px solid var(--copper-dark);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 22px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+  }
+  .panel h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+  .btn {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(160deg, var(--copper-light), var(--copper-dark));
+    color: var(--cream);
+    border: 1px solid var(--copper-dark);
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin: 6px 4px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  }
+  .btn:active { transform: translateY(1px); box-shadow: none; }
+  input[type=text] {
+    font-family: 'Lato', sans-serif;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--copper-dark);
+    background: rgba(244,234,217,0.92);
+    color: var(--ink);
+    font-size: 14px;
+    width: 180px;
+    margin: 4px 4px;
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+  th, td { padding: 7px 8px; text-align: left; border-bottom: 1px solid rgba(184,112,63,0.3); }
+  th { font-family: 'Cinzel', serif; color: var(--copper-light); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  tr.me { background: rgba(232,200,122,0.12); }
+  .rank { color: var(--gold); font-family: 'Cinzel', serif; width: 26px; }
+  .firefly {
+    position: fixed;
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px 3px rgba(232,200,122,0.7);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .content { position: relative; z-index: 1; width: 100%; display:flex; flex-direction: column; align-items: center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="content">
+    <h1>🏮 Copper Fairway</h1>
+    <p class="subtitle">A three-hole twilight course &mdash; drag back from the ball, release to putt</p>
+    <div class="hud">
+      <span>Hole <b id="holeNum">1</b> / 3</span>
+      <span>Par <b id="parNum">3</b></span>
+      <span>Strokes <b id="strokeNum">0</b></span>
+      <span>Total <b id="totalNum">0</b></span>
+    </div>
+    <canvas id="course" width="700" height="440"></canvas>
+    <div class="power-wrap"><div class="power-bar" id="powerBar"></div></div>
+    <p class="hint" id="hint">Click/tap and drag away from the lantern-ball, then release to putt.</p>
+
+    <div class="panel" id="finishPanel" style="display:none;">
+      <h2 id="finishTitle">Round complete!</h2>
+      <p id="finishScore" style="margin:0 0 10px;"></p>
+      <input type="text" id="nameInput" placeholder="Your name" maxlength="18">
+      <div style="margin: 10px 0; font-size: 13.5px; color: var(--cream); display:flex; align-items:center; justify-content:center; gap:8px;">
+        <input type="checkbox" id="redeemCheck" style="width:16px; height:16px; cursor:pointer;">
+        <label for="redeemCheck" style="cursor:pointer;">I've redeemed the "Submit Copper Fairway Score" channel points reward</label>
+      </div>
+      <button class="btn" id="submitBtn" disabled>Add to leaderboard</button>
+      <button class="btn" id="replayBtn">Play again</button>
+      <div id="leaderboardWrap" style="display:none; text-align:left; margin-top:14px;">
+        <h2 style="text-align:center;">🔥 Leaderboard</h2>
+        <table id="leaderboardTable"><thead><tr><th class="rank">#</th><th>Name</th><th>Strokes</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---------- Firebase (shared leaderboard) ----------
+const firebaseConfig = {
+  apiKey: "AIzaSyAOusj_HTQIjKf4bbAf-zsOzkVQkkl4VeY",
+  authDomain: "copper-fairway.firebaseapp.com",
+  databaseURL: "https://copper-fairway-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "copper-fairway",
+  storageBucket: "copper-fairway.firebasestorage.app",
+  messagingSenderId: "435200989183",
+  appId: "1:435200989183:web:2c38702b0418d014f139ca"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// ---------- Ambient fireflies (decorative, outside canvas) ----------
+for (let i = 0; i < 14; i++) {
+  const f = document.createElement('div');
+  f.className = 'firefly';
+  f.style.left = Math.random() * 100 + 'vw';
+  f.style.top = Math.random() * 100 + 'vh';
+  f.style.animation = `drift${i % 4} ${8 + Math.random()*6}s ease-in-out infinite`;
+  f.style.opacity = 0.3 + Math.random()*0.5;
+  document.body.appendChild(f);
+}
+const styleTag = document.createElement('style');
+styleTag.innerHTML = `
+@keyframes drift0 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(30px,-40px);} }
+@keyframes drift1 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-25px,35px);} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(40px,20px);} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-35px,-25px);} }
+`;
+document.head.appendChild(styleTag);
+
+// ---------- Game setup ----------
+const canvas = document.getElementById('course');
+const ctx = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+const BALL_R = 8;
+const HOLE_R = 13;
+const FRICTION = 0.986;
+const STOP_SPEED = 0.04;
+const MAX_DRAG = 130;
+const MAX_POWER = 15;
+
+// Courses: obstacles are axis-aligned rects {x,y,w,h}. Circular obstacle for hole 3 (swinging lantern).
+const courses = [
+  {
+    par: 2,
+    ballStart: {x: 60, y: 220},
+    hole: {x: 620, y: 220},
+    obstacles: [
+      {x: 300, y: 0, w: 20, h: 170},
+      {x: 300, y: 270, w: 20, h: 170}
+    ],
+    label: "The Straightaway"
+  },
+  {
+    par: 3,
+    ballStart: {x: 60, y: 60},
+    hole: {x: 630, y: 380},
+    obstacles: [
+      {x: 0, y: 200, w: 460, h: 20},
+      {x: 460, y: 200, w: 20, h: 240}
+    ],
+    label: "The Dogleg"
+  },
+  {
+    par: 4,
+    ballStart: {x: 60, y: 220},
+    hole: {x: 640, y: 220},
+    obstacles: [
+      {x: 220, y: 0, w: 20, h: 300},
+      {x: 460, y: 140, w: 20, h: 300}
+    ],
+    swinger: {cx: 340, baseY: 150, amp: 110, speed: 0.0016, r: 16},
+    label: "The Lantern Post"
+  }
+];
+
+let holeIndex = 0, strokes = 0, totalStrokes = 0, roundStrokes = [];
+let ball = {x: 0, y: 0, vx: 0, vy: 0, moving: false};
+let aiming = false, dragStart = null, dragCur = null;
+let sunkThisHole = false;
+let t = 0;
+
+function loadHole(i) {
+  const c = courses[i];
+  ball = {x: c.ballStart.x, y: c.ballStart.y, vx: 0, vy: 0, moving: false};
+  strokes = 0;
+  sunkThisHole = false;
+  document.getElementById('holeNum').textContent = i + 1;
+  document.getElementById('parNum').textContent = c.par;
+  document.getElementById('strokeNum').textContent = 0;
+  document.getElementById('hint').textContent = `${c.label} — drag back from the ball, release to putt.`;
+}
+
+function circleRectCollide(cx, cy, r, rect) {
+  const nx = Math.max(rect.x, Math.min(cx, rect.x + rect.w));
+  const ny = Math.max(rect.y, Math.min(cy, rect.y + rect.h));
+  const dx = cx - nx, dy = cy - ny;
+  const distSq = dx*dx + dy*dy;
+  if (distSq < r*r) {
+    const dist = Math.sqrt(distSq) || 0.0001;
+    return {nx: dx/dist, ny: dy/dist, penetration: r - dist, px: nx, py: ny};
+  }
+  return null;
+}
+
+function update() {
+  if (holeIndex >= courses.length) {
+    requestAnimationFrame(update);
+    return;
+  }
+  const c = courses[holeIndex];
+  t += 16;
+
+  if (ball.moving) {
+    ball.x += ball.vx;
+    ball.y += ball.vy;
+    ball.vx *= FRICTION;
+    ball.vy *= FRICTION;
+
+    // Boundary walls
+    if (ball.x - BALL_R < 6) { ball.x = 6 + BALL_R; ball.vx *= -0.7; }
+    if (ball.x + BALL_R > W - 6) { ball.x = W - 6 - BALL_R; ball.vx *= -0.7; }
+    if (ball.y - BALL_R < 6) { ball.y = 6 + BALL_R; ball.vy *= -0.7; }
+    if (ball.y + BALL_R > H - 6) { ball.y = H - 6 - BALL_R; ball.vy *= -0.7; }
+
+    // Obstacle collisions
+    for (const rect of c.obstacles) {
+      const hit = circleRectCollide(ball.x, ball.y, BALL_R, rect);
+      if (hit) {
+        ball.x += hit.nx * hit.penetration;
+        ball.y += hit.ny * hit.penetration;
+        const dot = ball.vx * hit.nx + ball.vy * hit.ny;
+        ball.vx -= 2 * dot * hit.nx;
+        ball.vy -= 2 * dot * hit.ny;
+        ball.vx *= 0.75; ball.vy *= 0.75;
+      }
+    }
+
+    // Swinger collision (hole 3)
+    if (c.swinger) {
+      const sy = c.swinger.baseY + Math.sin(t * c.swinger.speed) * c.swinger.amp;
+      const dx = ball.x - c.swinger.cx, dy = ball.y - sy;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const minDist = BALL_R + c.swinger.r;
+      if (dist < minDist) {
+        const nx = dx/dist, ny = dy/dist;
+        ball.x = c.swinger.cx + nx * minDist;
+        ball.y = sy + ny * minDist;
+        const dot = ball.vx*nx + ball.vy*ny;
+        ball.vx -= 2*dot*nx; ball.vy -= 2*dot*ny;
+        ball.vx *= 0.9; ball.vy *= 0.9;
+      }
+    }
+
+    const speed = Math.sqrt(ball.vx*ball.vx + ball.vy*ball.vy);
+    if (speed < STOP_SPEED) {
+      ball.vx = 0; ball.vy = 0; ball.moving = false;
+    }
+
+    // Hole check
+    const hdx = ball.x - c.hole.x, hdy = ball.y - c.hole.y;
+    const hdist = Math.sqrt(hdx*hdx + hdy*hdy);
+    if (hdist < HOLE_R && !sunkThisHole) {
+      const curSpeed = Math.sqrt(ball.vx*ball.vx + ball.vy*ball.vy);
+      if (curSpeed < 6) {
+        sunkThisHole = true;
+        ball.moving = false;
+        ball.vx = 0; ball.vy = 0;
+        setTimeout(nextHole, 650);
+      }
+    }
+  }
+
+  draw();
+  requestAnimationFrame(update);
+}
+
+function draw() {
+  if (holeIndex >= courses.length) return;
+  const c = courses[holeIndex];
+  ctx.clearRect(0, 0, W, H);
+
+  // Fairway
+  const grad = ctx.createRadialGradient(W/2, H/2, 60, W/2, H/2, 500);
+  grad.addColorStop(0, '#2c6b64');
+  grad.addColorStop(1, '#123330');
+  ctx.fillStyle = grad;
+  roundRect(ctx, 4, 4, W-8, H-8, 12);
+  ctx.fill();
+
+  // Border trim
+  ctx.strokeStyle = '#b8703f';
+  ctx.lineWidth = 3;
+  roundRect(ctx, 4, 4, W-8, H-8, 12);
+  ctx.stroke();
+
+  // subtle mow stripes
+  ctx.save();
+  ctx.globalAlpha = 0.05;
+  ctx.fillStyle = '#fff';
+  for (let x = 10; x < W; x += 44) ctx.fillRect(x, 6, 22, H-12);
+  ctx.restore();
+
+  // Obstacles (copper hedge blocks)
+  for (const rect of c.obstacles) {
+    ctx.fillStyle = '#8a5228';
+    ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
+    ctx.strokeStyle = '#4a2a13';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+  }
+
+  // Swinger (lantern post obstacle)
+  if (c.swinger) {
+    const sy = c.swinger.baseY + Math.sin(t * c.swinger.speed) * c.swinger.amp;
+    ctx.strokeStyle = 'rgba(184,112,63,0.5)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(c.swinger.cx, 0);
+    ctx.lineTo(c.swinger.cx, H);
+    ctx.setLineDash([4,6]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.beginPath();
+    ctx.arc(c.swinger.cx, sy, c.swinger.r, 0, Math.PI*2);
+    const lg = ctx.createRadialGradient(c.swinger.cx, sy, 2, c.swinger.cx, sy, c.swinger.r);
+    lg.addColorStop(0, '#ffe9b0');
+    lg.addColorStop(1, '#e8c87a');
+    ctx.fillStyle = lg;
+    ctx.shadowColor = 'rgba(232,200,122,0.9)';
+    ctx.shadowBlur = 18;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = '#8a5228';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  // Hole
+  ctx.beginPath();
+  ctx.arc(c.hole.x, c.hole.y, HOLE_R, 0, Math.PI*2);
+  ctx.fillStyle = '#0a1a18';
+  ctx.fill();
+  ctx.strokeStyle = '#e8c87a';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  // flag
+  ctx.strokeStyle = '#d99a67';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(c.hole.x, c.hole.y - HOLE_R);
+  ctx.lineTo(c.hole.x, c.hole.y - 46);
+  ctx.stroke();
+  ctx.fillStyle = '#b8703f';
+  ctx.beginPath();
+  ctx.moveTo(c.hole.x, c.hole.y - 46);
+  ctx.lineTo(c.hole.x + 18, c.hole.y - 40);
+  ctx.lineTo(c.hole.x, c.hole.y - 34);
+  ctx.closePath();
+  ctx.fill();
+
+  // Ball (lantern glow)
+  if (!sunkThisHole || ball.moving) {
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, BALL_R, 0, Math.PI*2);
+    const bg = ctx.createRadialGradient(ball.x-2, ball.y-2, 1, ball.x, ball.y, BALL_R);
+    bg.addColorStop(0, '#fff6de');
+    bg.addColorStop(1, '#e8c87a');
+    ctx.fillStyle = bg;
+    ctx.shadowColor = 'rgba(232,200,122,0.8)';
+    ctx.shadowBlur = 10;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = '#8a5228';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+  }
+
+  // Aim line
+  if (aiming && dragCur) {
+    const dx = dragStart.x - dragCur.x;
+    const dy = dragStart.y - dragCur.y;
+    const len = Math.min(Math.sqrt(dx*dx+dy*dy), MAX_DRAG);
+    const ang = Math.atan2(dy, dx);
+    const ex = ball.x + Math.cos(ang) * len;
+    const ey = ball.y + Math.sin(ang) * len;
+    ctx.beginPath();
+    ctx.moveTo(ball.x, ball.y);
+    ctx.lineTo(ex, ey);
+    ctx.strokeStyle = 'rgba(232,200,122,0.85)';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([5,5]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // arrowhead
+    ctx.beginPath();
+    ctx.arc(ex, ey, 4, 0, Math.PI*2);
+    ctx.fillStyle = '#e8c87a';
+    ctx.fill();
+  }
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.arcTo(x+w, y, x+w, y+h, r);
+  ctx.arcTo(x+w, y+h, x, y+h, r);
+  ctx.arcTo(x, y+h, x, y, r);
+  ctx.arcTo(x, y, x+w, y, r);
+  ctx.closePath();
+}
+
+function getPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = W / rect.width, scaleY = H / rect.height;
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+  return {x: (clientX - rect.left) * scaleX, y: (clientY - rect.top) * scaleY};
+}
+
+function pointerDown(e) {
+  if (ball.moving || sunkThisHole) return;
+  const p = getPos(e);
+  const d = Math.sqrt((p.x-ball.x)**2 + (p.y-ball.y)**2);
+  if (d < 40) {
+    aiming = true;
+    dragStart = {x: ball.x, y: ball.y};
+    dragCur = p;
+  }
+}
+function pointerMove(e) {
+  if (!aiming) return;
+  dragCur = getPos(e);
+  const dx = dragStart.x - dragCur.x, dy = dragStart.y - dragCur.y;
+  const len = Math.min(Math.sqrt(dx*dx+dy*dy), MAX_DRAG);
+  document.getElementById('powerBar').style.width = (len / MAX_DRAG * 100) + '%';
+}
+function pointerUp(e) {
+  if (!aiming) return;
+  aiming = false;
+  const dx = dragStart.x - dragCur.x, dy = dragStart.y - dragCur.y;
+  let len = Math.sqrt(dx*dx+dy*dy);
+  if (len < 6) { document.getElementById('powerBar').style.width = '0%'; return; }
+  len = Math.min(len, MAX_DRAG);
+  const power = (len / MAX_DRAG) * MAX_POWER;
+  const ang = Math.atan2(dy, dx);
+  ball.vx = Math.cos(ang) * power;
+  ball.vy = Math.sin(ang) * power;
+  ball.moving = true;
+  strokes++;
+  document.getElementById('strokeNum').textContent = strokes;
+  document.getElementById('powerBar').style.width = '0%';
+}
+
+canvas.addEventListener('mousedown', pointerDown);
+canvas.addEventListener('mousemove', pointerMove);
+window.addEventListener('mouseup', pointerUp);
+canvas.addEventListener('touchstart', (e) => { pointerDown(e); e.preventDefault(); }, {passive:false});
+canvas.addEventListener('touchmove', (e) => { pointerMove(e); e.preventDefault(); }, {passive:false});
+canvas.addEventListener('touchend', (e) => { pointerUp(e); e.preventDefault(); }, {passive:false});
+
+function nextHole() {
+  roundStrokes.push(strokes);
+  totalStrokes += strokes;
+  document.getElementById('totalNum').textContent = totalStrokes;
+  holeIndex++;
+  if (holeIndex >= courses.length) {
+    finishRound();
+  } else {
+    loadHole(holeIndex);
+  }
+}
+
+function finishRound() {
+  document.getElementById('finishPanel').style.display = 'block';
+  const par = courses.reduce((a,c) => a + c.par, 0);
+  const rel = totalStrokes - par;
+  const relStr = rel === 0 ? 'even par' : (rel > 0 ? `+${rel}` : `${rel}`);
+  document.getElementById('finishScore').textContent = `You finished in ${totalStrokes} strokes (${relStr}) across ${courses.length} holes.`;
+}
+
+async function loadLeaderboard() {
+  try {
+    const snapshot = await db.ref('leaderboard').once('value');
+    const data = snapshot.val();
+    if (!data) return [];
+    return Object.values(data);
+  } catch (e) {
+    console.error('load failed', e);
+    return [];
+  }
+}
+
+async function addLeaderboardEntry(entry) {
+  try {
+    await db.ref('leaderboard').push(entry);
+    return true;
+  } catch (e) {
+    console.error('save failed', e);
+    return false;
+  }
+}
+
+async function renderLeaderboard(highlightName) {
+  const list = await loadLeaderboard();
+  list.sort((a,b) => a.strokes - b.strokes);
+  const top = list.slice(0, 10);
+  const tbody = document.querySelector('#leaderboardTable tbody');
+  tbody.innerHTML = '';
+  top.forEach((entry, i) => {
+    const tr = document.createElement('tr');
+    if (entry.name === highlightName && entry.strokes === (window.__lastSubmit || -1)) tr.className = 'me';
+    tr.innerHTML = `<td class="rank">${i+1}</td><td>${escapeHtml(entry.name)}</td><td>${entry.strokes}</td>`;
+    tbody.appendChild(tr);
+  });
+  document.getElementById('leaderboardWrap').style.display = 'block';
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+document.getElementById('redeemCheck').addEventListener('change', (e) => {
+  document.getElementById('submitBtn').disabled = !e.target.checked;
+});
+
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const name = document.getElementById('nameInput').value.trim() || 'Anonymous Firefly';
+  window.__lastSubmit = totalStrokes;
+  document.getElementById('submitBtn').textContent = 'Saving...';
+  await addLeaderboardEntry({name, strokes: totalStrokes, date: Date.now()});
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitBtn').textContent = 'Added!';
+  document.getElementById('redeemCheck').disabled = true;
+  renderLeaderboard(name);
+});
+
+document.getElementById('replayBtn').addEventListener('click', () => {
+  holeIndex = 0; totalStrokes = 0; roundStrokes = [];
+  document.getElementById('totalNum').textContent = 0;
+  document.getElementById('finishPanel').style.display = 'none';
+  document.getElementById('leaderboardWrap').style.display = 'none';
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitBtn').textContent = 'Add to leaderboard';
+  document.getElementById('nameInput').value = '';
+  document.getElementById('redeemCheck').checked = false;
+  document.getElementById('redeemCheck').disabled = false;
+  loadHole(0);
+});
+
+loadHole(0);
+update();
+</script>
+</body>
+</html>
