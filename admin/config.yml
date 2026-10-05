@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Hellsbells4121/hellsbells-website
   branch: main
 
 media_folder: "assets/uploads"
