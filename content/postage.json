@@ -1,11 +1,35 @@
 {
-  "fee_percent": 0,
+  "fee_percent": 5,
   "rates": [
-    { "size": "small", "destination": "Australia", "price": 11.7 },
-    { "size": "small", "destination": "USA", "price": 15.75 },
-    { "size": "medium", "destination": "Australia", "price": 11.7 },
-    { "size": "medium", "destination": "USA", "price": 21.05 },
-    { "size": "large", "destination": "Australia", "price": 16 },
-    { "size": "large", "destination": "USA", "price": 27.95 }
+    {
+      "size": "small",
+      "destination": "Australia",
+      "price": 11.7
+    },
+    {
+      "size": "small",
+      "destination": "USA",
+      "price": 15.75
+    },
+    {
+      "size": "medium",
+      "destination": "Australia",
+      "price": 11.7
+    },
+    {
+      "size": "medium",
+      "destination": "USA",
+      "price": 21.05
+    },
+    {
+      "size": "large",
+      "destination": "Australia",
+      "price": 16
+    },
+    {
+      "size": "large",
+      "destination": "USA",
+      "price": 27.95
+    }
   ]
 }
