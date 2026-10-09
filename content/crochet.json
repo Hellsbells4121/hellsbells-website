@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "name": "Hedwig",
+      "price": "$30 + Postage(Large)",
+      "status": "Available",
+      "postage_au": 11.7,
+      "postage_us": 21.05,
+      "postage_ca": 21.05,
+      "description": "A medium sized Hedwig owl - plush and soft.  Features white wool and black markings.  Great as a gift for a Potter fan. \n",
+      "image": "/assets/uploads/hedwig.png"
+    },
+    {
+      "name": "Onigiri Sprite",
+      "price": "8",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 12,
+      "postage_ca": 12,
+      "description": "A cute little Onigiri sprite from the Fortnite sprite family",
+      "image": "/assets/uploads/onigiri-sprite.jpg"
+    },
+    {
+      "name": "Cute little owl",
+      "price": "15",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 12,
+      "postage_ca": 12,
+      "description": "A cute little Amigurumi owl - cute and cuddly, great little gift idea",
+      "image": "/assets/uploads/cute-owl.jpg"
+    },
+    {
+      "name": "Halloween Ghost",
+      "price": "10",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 12,
+      "postage_ca": 12,
+      "description": "A cute little Amigurumi ghost.  Can also be made to order.  Keychain",
+      "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
+    },
+    {
+      "name": "Pink & Purple Halloween Ghost",
+      "price": "10",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 16,
+      "postage_ca": 16,
+      "description": "A cute pink and purple Halloween ghost - keychain",
+      "image": "/assets/uploads/pink-ghost.jpg"
+    }
+  ]
+}
