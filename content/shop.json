@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "name": "TEST ITEM (not for sale)",
+      "price": "$1 (postage included)",
+      "status": "Available",
+      "description": "This is a test to check the shop works. Please do not buy.",
+      "image": ""
+    },
+    {
+      "name": "TEST ITEM with no price",
+      "price": "",
+      "status": "Made to order",
+      "description": "Test of the Ask about this one button.",
+      "image": ""
+    },
+    {
+      "name": "TEST ITEM sold",
+      "price": "$20",
+      "status": "Sold",
+      "description": "Test: this one should have no buttons.",
+      "image": ""
+    }
+  ]
+}
