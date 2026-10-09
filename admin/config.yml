@@ -1,0 +1,93 @@
+backend:
+  name: github
+  repo: Hellsbells4121/hellsbells-website
+  branch: main
+  site_domain: hellsbells-au.netlify.app
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://hellsbells4121.org"
+display_url: "https://hellsbells4121.org"
+
+collections:
+  - name: "crochet"
+    label: "Crochet Gallery"
+    files:
+      - file: "content/crochet.json"
+        label: "Crochet Items"
+        name: "crochet"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{name}} — {{status}}"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string", required: false, hint: "Just the item price, like $10, then pick a Postage size below and the shop adds postage. Or write $30 (postage included) for one price. Leave blank if not for sale."}
+              - {label: "Status", name: "status", widget: "select", options: ["Available", "Made to order", "Sold", "In progress", "In collection"]}
+              - label: "Postage size"
+                name: "postage"
+                widget: "select"
+                required: false
+                hint: "Needed for the shop to add postage. Weigh it packed. Not needed if the price says postage included."
+                options:
+                  - {label: "Small (up to 50g, like a keychain)", value: "small"}
+                  - {label: "Medium (50g to 250g)", value: "medium"}
+                  - {label: "Large (250g to 500g)", value: "large"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Photo", name: "image", widget: "image", required: false}
+
+  - name: "music"
+    label: "Music"
+    files:
+      - file: "content/music.json"
+        label: "Albums"
+        name: "music"
+        fields:
+          - label: "Albums"
+            name: "albums"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Cover art", name: "cover", widget: "image", required: false}
+              - {label: "Spotify link", name: "spotify_url", widget: "string", required: false}
+              - {label: "Apple Music link", name: "apple_music_url", widget: "string", required: false}
+              - {label: "YouTube link", name: "youtube_url", widget: "string", required: false}
+
+  - name: "books"
+    label: "Books"
+    files:
+      - file: "content/books.json"
+        label: "Books"
+        name: "books"
+        fields:
+          - label: "Books"
+            name: "books"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Cover", name: "cover", widget: "image", required: false}
+              - {label: "Amazon link", name: "amazon_url", widget: "string", required: false}
+              - {label: "IngramSpark link", name: "ingramspark_url", widget: "string", required: false}
+
+  - name: "postage"
+    label: "Postage Prices"
+    files:
+      - file: "content/postage.json"
+        label: "Postage prices"
+        name: "postage"
+        fields:
+          - {label: "PayPal fee to add (percent)", name: "fee_percent", widget: "number", value_type: "float", min: 0, default: 0, hint: "0 adds nothing. Put 5 to add 5% to the total to cover PayPal fees."}
+          - label: "Postage rates"
+            name: "rates"
+            widget: "list"
+            summary: "{{size}} to {{destination}}: ${{price}}"
+            fields:
+              - {label: "Parcel size", name: "size", widget: "select", options: [{label: "Small", value: "small"}, {label: "Medium", value: "medium"}, {label: "Large", value: "large"}]}
+              - {label: "Where it is going", name: "destination", widget: "string", hint: "e.g. Australia or USA. Buyers see this in a drop-down."}
+              - {label: "Postage price in AUD", name: "price", widget: "number", value_type: "float", min: 0}
