@@ -41,14 +41,15 @@
       "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
     },
     {
-      "name": "Pink & Purple Halloween Ghost",
       "price": "10",
+      "name": "Pink & Purple Halloween Ghost",
+      "postage_eu": 16,
       "status": "Available",
       "postage_au": 6,
-      "postage_us": 16,
-      "postage_ca": 16,
-      "description": "A cute pink and purple Halloween ghost - keychain",
-      "image": "/assets/uploads/pink-ghost.jpg"
+      "image": "/assets/uploads/pink-ghost.jpg",
+      "description": "A cute little Pink & purple Halloween ghost on keychain, great little gift idea!",
+      "postage_ca": 12,
+      "postage_us": 12
     }
   ]
 }
