@@ -28,6 +28,8 @@ collections:
               - {label: "Status", name: "status", widget: "select", options: ["Available", "Made to order", "Sold", "In progress", "In collection"]}
               - {label: "Postage to Australia ($)", name: "postage_au", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 11.70. The shop adds it to the price."}
               - {label: "Postage to USA ($)", name: "postage_us", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 15.75. Leave blank if you do not post there."}
+              - {label: "Postage to Canada ($)", name: "postage_ca", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 15.75. Australia Post charges Canada the same as the USA. Leave blank if you do not post there."}
+              - {label: "Postage to Europe ($)", name: "postage_eu", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 16.60. Includes the UK. Leave blank if you do not post there."}
               - {label: "Description", name: "description", widget: "text", required: false}
               - {label: "Photo", name: "image", widget: "image", required: false}
 

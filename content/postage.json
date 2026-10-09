@@ -12,6 +12,16 @@
       "price": 15.75
     },
     {
+      "size": "small",
+      "destination": "Canada",
+      "price": 15.75
+    },
+    {
+      "size": "small",
+      "destination": "Europe",
+      "price": 16.6
+    },
+    {
       "size": "medium",
       "destination": "Australia",
       "price": 11.7
@@ -22,6 +32,16 @@
       "price": 21.05
     },
     {
+      "size": "medium",
+      "destination": "Canada",
+      "price": 21.05
+    },
+    {
+      "size": "medium",
+      "destination": "Europe",
+      "price": 26.4
+    },
+    {
       "size": "large",
       "destination": "Australia",
       "price": 16
@@ -30,6 +50,16 @@
       "size": "large",
       "destination": "USA",
       "price": 27.95
+    },
+    {
+      "size": "large",
+      "destination": "Canada",
+      "price": 27.95
+    },
+    {
+      "size": "large",
+      "destination": "Europe",
+      "price": 33.55
     }
   ]
 }

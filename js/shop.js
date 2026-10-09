@@ -1,6 +1,6 @@
 // Renders the shop from content/crochet.json (the same list as the Crochet page).
 // Only items with status Available or Made to order appear here.
-// Each item can have its own postage prices (Australia, USA). The shop adds them to the price.
+// Each item can have its own postage prices (Australia, USA, Canada, Europe). The shop adds them to the price.
 (function () {
   var mount = document.getElementById('shop-items');
   if (!mount) return;
@@ -35,7 +35,7 @@
   // Postage prices typed on the item itself.
   function ratesFor(item) {
     var out = [];
-    [['Australia', item.postage_au], ['USA', item.postage_us]].forEach(function (p) {
+    [['Australia', item.postage_au], ['USA', item.postage_us], ['Canada', item.postage_ca], ['Europe', item.postage_eu]].forEach(function (p) {
       var n = parseFloat(String(p[1] == null ? '' : p[1]).replace(/[^0-9.]/g, ''));
       if (p[1] !== '' && p[1] != null && !isNaN(n) && n >= 0) out.push({ destination: p[0], price: n });
     });
