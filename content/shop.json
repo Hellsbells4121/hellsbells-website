@@ -1,18 +1,3 @@
 {
-  "items": [
-    {
-      "name": "Pirate",
-      "price": "$50 (postage included)",
-      "status": "Available",
-      "description": "A crocheted pirate with a red coat, tricorn hat, eyepatch and sword.",
-      "image": ""
-    },
-    {
-      "name": "Pirate crew set: 6 pirates and a whale",
-      "price": "",
-      "status": "Available",
-      "description": "The whole crew: six different pirates and one whale. Ask for the set price.",
-      "image": ""
-    }
-  ]
+  "items": []
 }
