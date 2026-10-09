@@ -20,6 +20,15 @@
       "status": "Available",
       "description": "Small Halloween ghost keychain about 10cms high",
       "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
+    },
+    {
+      "name": "Onigiri Sprite (Fortnite)",
+      "price": "$8 + postage (Aus)",
+      "status": "Available",
+      "postage_au": 11,
+      "postage_us": 15,
+      "description": "A cute little Onigiri sprite (Fortnite sprites) with keychain.  Great for a little thank you gift.\nIf would like sent overseas please contact via hpcreates4121@gmail.com",
+      "image": "/assets/uploads/onigiri-sprite.jpg"
     }
   ]
 }
