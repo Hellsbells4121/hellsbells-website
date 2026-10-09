@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "name": "Halloween Ghost Keychain",
-      "price": "$10 + Postage ( Aus) ",
-      "status": "Available",
-      "description": "A 10cm Halloween Ghost keychain.  If wanted to purchase from overseas please send email to hpcreates4121@gmail.com",
-      "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
-    },
-    {
       "name": "Little Owl",
       "price": "$15 + postage (Aus)",
       "status": "Available",
@@ -20,6 +13,13 @@
       "status": "Available",
       "description": "Hedwig the owl, family favourite.  White with black tips.  Soft, plushy. \nIf wanting to purchase from overseas please send email to hpcreates4121@gmail.com",
       "image": "/assets/uploads/hedwig.png"
+    },
+    {
+      "name": "Halloween Ghost keychain",
+      "price": "$10 ",
+      "status": "Available",
+      "description": "Small Halloween ghost keychain about 10cms high",
+      "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
     }
   ]
 }
