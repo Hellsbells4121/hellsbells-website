@@ -35,6 +35,15 @@
       "postage_us": 12,
       "description": "A cute little Amigurumi ghost.  Can also be made to order.  Keychain",
       "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
+    },
+    {
+      "name": "Pink & Purple Halloween Ghost",
+      "price": "10",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 16,
+      "description": "A cute pink and purple Halloween ghost - keychain",
+      "image": "/assets/uploads/pink-ghost.jpg"
     }
   ]
 }
