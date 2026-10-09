@@ -17,6 +17,15 @@
       "postage_us": 12,
       "description": "A cute little Onigiri sprite from the Fortnite sprite family",
       "image": "/assets/uploads/onigiri-sprite.jpg"
+    },
+    {
+      "name": "Cute little owl",
+      "price": "15",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 12,
+      "description": "A cute little Amigurumi owl - cute and cuddly, great little gift idea",
+      "image": "/assets/uploads/cute-owl.jpg"
     }
   ]
 }
