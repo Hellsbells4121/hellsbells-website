@@ -1,18 +1,18 @@
 {
   "items": [
     {
-      "name": "Little Owl",
-      "price": "$15 + Postage",
-      "status": "In collection",
-      "description": "Mint green with a purple flower crown, perched and watching the room.",
-      "image": "/assets/owl-thumb.jpg"
-    },
-    {
       "name": "Halloween Ghost Keychain",
       "price": "$10 + Postage ( Aus) ",
       "status": "Available",
       "description": "A 10cm Halloween Ghost keychain.  If wanted to purchase from overseas please send email to hpcreates4121@gmail.com",
       "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
+    },
+    {
+      "name": "Little Owl",
+      "price": "$15 + postage (Aus)",
+      "status": "Available",
+      "description": " A cute little owl standing tall. Comes in a gift box and tag.\nIf wanted to be purchased from overseas please contact hpcreates4121@gmail.com",
+      "image": "/assets/uploads/cute-owl.jpg"
     }
   ]
 }
