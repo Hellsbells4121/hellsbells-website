@@ -1,27 +1,6 @@
 {
   "items": [
     {
-      "name": "Little Owl",
-      "price": "$15 + postage (Aus)",
-      "status": "Available",
-      "description": " A cute little owl standing tall. Comes in a gift box and tag.\nIf wanted to be purchased from overseas please contact hpcreates4121@gmail.com",
-      "image": "/assets/uploads/cute-owl.jpg"
-    },
-    {
-      "name": "Hedwig",
-      "price": "$35 + Postage (Aus)",
-      "status": "Available",
-      "description": "Hedwig the owl, family favourite.  White with black tips.  Soft, plushy. \nIf wanting to purchase from overseas please send email to hpcreates4121@gmail.com",
-      "image": "/assets/uploads/hedwig.png"
-    },
-    {
-      "name": "Halloween Ghost keychain",
-      "price": "$10 ",
-      "status": "Available",
-      "description": "Small Halloween ghost keychain about 10cms high",
-      "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
-    },
-    {
       "name": "Onigiri Sprite (Fortnite)",
       "price": "$8 + postage (Aus)",
       "status": "Available",
@@ -29,6 +8,15 @@
       "postage_us": 15,
       "description": "A cute little Onigiri sprite (Fortnite sprites) with keychain.  Great for a little thank you gift.\nIf would like sent overseas please contact via hpcreates4121@gmail.com",
       "image": "/assets/uploads/onigiri-sprite.jpg"
+    },
+    {
+      "name": "Hedwig",
+      "price": "$30 + Postage(Large)",
+      "status": "Available",
+      "postage_au": 11.7,
+      "postage_us": 21.05,
+      "description": "A medium sized Hedwig owl - plush and soft.  Features white wool and black markings.  Great as a gift for a Potter fan. \n",
+      "image": "/assets/uploads/hedwig.png"
     }
   ]
 }
