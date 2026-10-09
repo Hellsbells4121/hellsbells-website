@@ -26,6 +26,15 @@
       "postage_us": 12,
       "description": "A cute little Amigurumi owl - cute and cuddly, great little gift idea",
       "image": "/assets/uploads/cute-owl.jpg"
+    },
+    {
+      "name": "Halloween Ghost",
+      "price": "10",
+      "status": "Available",
+      "postage_au": 6,
+      "postage_us": 12,
+      "description": "A cute little Amigurumi ghost.  Can also be made to order.  Keychain",
+      "image": "/assets/uploads/halloween-ghost-with-keychain.jpg"
     }
   ]
 }
