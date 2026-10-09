@@ -13,6 +13,13 @@
       "status": "Available",
       "description": " A cute little owl standing tall. Comes in a gift box and tag.\nIf wanted to be purchased from overseas please contact hpcreates4121@gmail.com",
       "image": "/assets/uploads/cute-owl.jpg"
+    },
+    {
+      "name": "Hedwig",
+      "price": "$35 + Postage (Aus)",
+      "status": "Available",
+      "description": "Hedwig the owl, family favourite.  White with black tips.  Soft, plushy. \nIf wanting to purchase from overseas please send email to hpcreates4121@gmail.com",
+      "image": "/assets/uploads/hedwig.png"
     }
   ]
 }
