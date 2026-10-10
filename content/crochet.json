@@ -3,13 +3,13 @@
     {
       "price": "$30 + Postage(Large)",
       "name": "Hedwig",
-      "postage_eu": 30,
+      "postage_eu": 35,
       "status": "Available",
-      "postage_au": 11.7,
+      "postage_au": 16,
       "image": "/assets/uploads/hedwig.png",
       "description": "A medium sized Hedwig owl - plush and soft.  Features white wool and black markings.  Great as a gift for a Potter fan. \n",
-      "postage_ca": 12,
-      "postage_us": 12
+      "postage_ca": 20,
+      "postage_us": 20
     },
     {
       "price": "8",
@@ -29,7 +29,7 @@
       "status": "Available",
       "postage_au": 6,
       "image": "/assets/uploads/cute-owl.jpg",
-      "description": "A cute little Amigurumi owl - cute and cuddly, great little gift idea",
+      "description": "A cute little Amigurumi owl - cute and cuddly, great little gift idea.  ",
       "postage_ca": 12,
       "postage_us": 12
     },
