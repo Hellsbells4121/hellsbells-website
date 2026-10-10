@@ -1,14 +1,15 @@
 {
   "items": [
     {
-      "name": "Hedwig",
       "price": "$30 + Postage(Large)",
+      "name": "Hedwig",
+      "postage_eu": 16,
       "status": "Available",
       "postage_au": 11.7,
-      "postage_us": 21.05,
-      "postage_ca": 21.05,
+      "image": "/assets/uploads/hedwig.png",
       "description": "A medium sized Hedwig owl - plush and soft.  Features white wool and black markings.  Great as a gift for a Potter fan. \n",
-      "image": "/assets/uploads/hedwig.png"
+      "postage_ca": 12,
+      "postage_us": 12
     },
     {
       "name": "Onigiri Sprite",
