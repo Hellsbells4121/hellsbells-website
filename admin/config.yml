@@ -22,6 +22,7 @@ collections:
             name: "items"
             widget: "list"
             summary: "{{name}} — {{status}}"
+            collapsed: false
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Price", name: "price", widget: "string", required: false, hint: "Just the item price, like $10, then fill in the postage boxes below and the shop adds it. Or write $30 (postage included) for one price. Leave blank if not for sale."}
