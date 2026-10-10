@@ -3,7 +3,7 @@
     {
       "price": "$30 + Postage(Large)",
       "name": "Hedwig",
-      "postage_eu": 16,
+      "postage_eu": 16.6,
       "status": "Available",
       "postage_au": 11.7,
       "image": "/assets/uploads/hedwig.png",
