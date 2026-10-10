@@ -2,14 +2,6 @@
   "books": [
     {
       "title": "Whispers in the Water",
-      "description": "Whispers in the Water is the second enchanting adventure in the Thistlewink series, following the gentle, nature‑rich magic introduced in The Adventures of Thistlewink - The Lost Joey of Mount Hypipamee. This beautifully illustrated tale returns young readers to the glowing world of Thistlewink - a tiny, colour‑shifting fae creaturel whose courage shines as brightly as her wings.\nLife around Lake Eacham is usually calm and full of soft forest sounds, but Thistlewink begins to sense something unusual stirring beneath the surface. Ripples form without wind. Colours shimmer strangely across the water. And a faint, melodic whisper rises from the depths - a whisper only she can hear. It hums through her wings, tugs at her heart, and awakens a magic she doesn't yet understand.\nWith her loyal shimmerling companion glowing brighter than ever, Thistlewink follows the mysterious call to the lake's edge. There, she discovers a hidden world beneath the water - a realm of luminous caverns, ancient currents, and forgotten fae magic sealed away long ago. As she explores this underwater wonderland, Thistlewink uncovers clues to an old secret that once protected the lake and all the creatures who call it home.\nBut the balance of the lake is shifting. Colours are fading, shadows are stretching, and the Whisper grows more urgent. To restore harmony, Thistlewink must unravel the truth behind the ancient magic, understand the shimmerling's deep connection to the water, and find the bravery to face what lies in the quiet, glowing depths.\nFilled with soft suspense, gentle wonder, and the warm heart of a tiny fae girl determined to help her world, Whispers in the Water is a magical journey perfect for young readers who love nature, friendship, and stories where even the smallest hero can make a big difference.",
-      "cover": "/assets/uploads/screenshot-2026-10-10-145028.png",
-      "amazon_url": "https://www.amazon.com.au/dp/1764547438",
-      "ingramspark_url": "",
-      "author": "Briony Bramble"
-    },
-    {
-      "title": "Whispers in the Water",
       "description": "Beneath the shimmering surface of Lake Eacham, a mysterious whisper calls to Thistlewink, the tiny colour-shifting fae creature with a brave heart. When strange ripples and fading magic disturb the peaceful rainforest, Thistlewink and her loyal Shimmerling must journey into a hidden world below the water: glowing caverns, ancient secrets, and gentle underwater creatures reveal a mystery only she can solve. A tender, enchanting adventure about courage, friendship, and the quiet magic that lives in nature.",
       "cover": "/assets/book-whispers.jpg",
       "amazon_url": "https://www.amazon.com/dp/1764547462",
@@ -23,6 +15,14 @@
       "cover": "/assets/book-housekeeper.jpg",
       "amazon_url": "https://www.amazon.com.au/dp/B0GNCR6FYW",
       "ingramspark_url": ""
+    },
+    {
+      "title": "The Adventures of Thistlewink - The Lost Joey of Mount Hypipamee",
+      "author": "Briony Bramble",
+      "description": "The Adventures of Thistlewink. Book One invites young readers into a gentle, magical world hidden deep within the rainforest of the Atherton Tablelands in Far North Queensland. Thistlewink is a tiny fei creature with a chameleon's gift for changing colour, her hues shifting softly with every emotion. She lives quietly among ancient trees, glowing fungi, and the secret rhythms of the forest, until the day a shimmer of magic ripples through the canopy and calls her into her very first adventure.\n\nWhen a young red pademelon becomes lost near Mt Hypipamee, Thistlewink must follow glowing clues, listen to the whispers of the forest, and trust her own courage. Along the way she meets wise fei companions, gentle rainforest creatures, and the natural wonders that shape her world. Through each step of her journey, she learns that even the smallest being can bring comfort, kindness, and hope.\n\nThis beautifully illustrated story blends soft fantasy with real Australian landscapes, celebrating the unique wildlife and rainforest life of the Atherton Tablelands. Themes of friendship, belonging, emotional expression, courage, and the quiet magic of nature run throughout the book, making it ideal for families who value warm storytelling and calming, imaginative adventures.\n\nAs the first title in the series, this book introduces Thistlewink's world and the fei friends who will join her in future stories. With its soothing tone and heartfelt message, The Adventures of Thistlewink and Her Fei Friends offers a gentle reading experience filled with wonder, colour, and the beauty of the natural world.",
+      "cover": "/assets/uploads/screenshot-2026-10-10-145911.png",
+      "amazon_url": "https://www.amazon.com/dp/1764547438",
+      "ingramspark_url": "https://shop.ingramspark.com/b/084?params=fSv9QjDJ41fmbu2nHV1YexucMxIDmmpkKFIH72gmfhO"
     }
   ]
 }
