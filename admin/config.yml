@@ -45,6 +45,7 @@ collections:
             name: "albums"
             widget: "list"
             summary: "{{title}}"
+            collapsed: false
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text", required: false}
@@ -64,8 +65,10 @@ collections:
             name: "books"
             widget: "list"
             summary: "{{title}}"
+            collapsed: false
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "Author or pen name", name: "author", widget: "string", required: false, hint: "Shown as 'by ...' under the title, like Briony Bramble or HPCreates. Leave blank to show no author."}
               - {label: "Description", name: "description", widget: "text", required: false}
               - {label: "Cover", name: "cover", widget: "image", required: false}
               - {label: "Amazon link", name: "amazon_url", widget: "string", required: false}
