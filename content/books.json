@@ -1,18 +1,20 @@
 {
   "books": [
     {
-      "title": "The Lost Joey of Mount Hypipamee",
-      "description": "High in the mossy rainforest of Mt Hypipamee on the Atherton Tablelands, a magical fantasy creature named Thistlewink keeps watch over the creatures of the region. With soft wings and a brave heart, she brings calm to the wild places that need her most.",
-      "cover": "/assets/book-lost-joey.jpg",
+      "title": "Whispers in the Water",
+      "description": "Whispers in the Water is the second enchanting adventure in the Thistlewink series, following the gentle, nature‑rich magic introduced in The Adventures of Thistlewink - The Lost Joey of Mount Hypipamee. This beautifully illustrated tale returns young readers to the glowing world of Thistlewink - a tiny, colour‑shifting fae creaturel whose courage shines as brightly as her wings.\nLife around Lake Eacham is usually calm and full of soft forest sounds, but Thistlewink begins to sense something unusual stirring beneath the surface. Ripples form without wind. Colours shimmer strangely across the water. And a faint, melodic whisper rises from the depths - a whisper only she can hear. It hums through her wings, tugs at her heart, and awakens a magic she doesn't yet understand.\nWith her loyal shimmerling companion glowing brighter than ever, Thistlewink follows the mysterious call to the lake's edge. There, she discovers a hidden world beneath the water - a realm of luminous caverns, ancient currents, and forgotten fae magic sealed away long ago. As she explores this underwater wonderland, Thistlewink uncovers clues to an old secret that once protected the lake and all the creatures who call it home.\nBut the balance of the lake is shifting. Colours are fading, shadows are stretching, and the Whisper grows more urgent. To restore harmony, Thistlewink must unravel the truth behind the ancient magic, understand the shimmerling's deep connection to the water, and find the bravery to face what lies in the quiet, glowing depths.\nFilled with soft suspense, gentle wonder, and the warm heart of a tiny fae girl determined to help her world, Whispers in the Water is a magical journey perfect for young readers who love nature, friendship, and stories where even the smallest hero can make a big difference.",
+      "cover": "/assets/uploads/screenshot-2026-10-10-145028.png",
       "amazon_url": "https://www.amazon.com.au/dp/1764547438",
-      "ingramspark_url": ""
+      "ingramspark_url": "",
+      "author": "Briony Bramble"
     },
     {
       "title": "Whispers in the Water",
       "description": "Beneath the shimmering surface of Lake Eacham, a mysterious whisper calls to Thistlewink, the tiny colour-shifting fae creature with a brave heart. When strange ripples and fading magic disturb the peaceful rainforest, Thistlewink and her loyal Shimmerling must journey into a hidden world below the water: glowing caverns, ancient secrets, and gentle underwater creatures reveal a mystery only she can solve. A tender, enchanting adventure about courage, friendship, and the quiet magic that lives in nature.",
       "cover": "/assets/book-whispers.jpg",
-      "amazon_url": "https://www.amazon.com.au/dp/1764547462",
-      "ingramspark_url": ""
+      "amazon_url": "https://www.amazon.com/dp/1764547462",
+      "ingramspark_url": "https://shop.ingramspark.com/b/084?params=WR3BzYDcs9m5SEDpQ4HXEVXNgEMX45gBz0whZHbCdKk",
+      "author": "Briony Bramble"
     },
     {
       "title": "The Little Housekeeper's Journal",
