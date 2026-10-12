@@ -54,6 +54,17 @@
       "description": "A cute little Pink & purple Halloween ghost on keychain, great little gift idea!",
       "postage_ca": 16,
       "postage_us": 16
+    },
+    {
+      "price": "$15",
+      "name": "Lily sprite",
+      "postage_eu": 22,
+      "status": "Available",
+      "postage_au": 10,
+      "image": "/assets/uploads/pond-sprite.jpg",
+      "description": "A cute little sprite wearing a lily pad with flower on its head!",
+      "postage_ca": 16,
+      "postage_us": 16
     }
   ]
 }
