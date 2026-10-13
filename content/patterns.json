@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "name": "Lily Pad Frog",
+      "status": "Coming soon",
+      "price": "",
+      "details": "PDF pattern · US terms · 4ply cotton · 2.25 mm hook",
+      "description": "Crochet your own Lily Pad: a plump little pond frog in a lily pad hat with a coral lotus on top. An 8-page PDF with photos, round-by-round stitch counts and a diagram showing where the arms and feet go. The hat can sit wherever you like.",
+      "image": "/assets/uploads/lily-pad-pattern-front.jpg",
+      "more_images": [
+        "/assets/uploads/lily-pad-pattern-hat.jpg",
+        "/assets/uploads/lily-pad-pattern-top.jpg"
+      ],
+      "buy_url": ""
+    }
+  ]
+}

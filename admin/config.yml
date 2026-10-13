@@ -34,6 +34,32 @@ collections:
               - {label: "Description", name: "description", widget: "text", required: false}
               - {label: "Photo", name: "image", widget: "image", required: false}
 
+  - name: "patterns"
+    label: "Crochet Patterns"
+    files:
+      - file: "content/patterns.json"
+        label: "Patterns for sale"
+        name: "patterns"
+        fields:
+          - label: "Patterns"
+            name: "items"
+            widget: "list"
+            summary: "{{name}} — {{status}}"
+            collapsed: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Status", name: "status", widget: "select", options: ["Coming soon", "Available"], default: "Coming soon", hint: "Choose Available once the pattern is for sale and you have pasted the Buy link below."}
+              - {label: "Price", name: "price", widget: "string", required: false, hint: "Just the price, like $5. Shown only when Status is Available. Prices on this site are in Australian dollars."}
+              - {label: "Buy link", name: "buy_url", widget: "string", required: false, hint: "Paste the full web address of the pattern on Etsy, Ko-fi or Payhip (it starts with https://). The Buy button appears when this is filled in and Status is Available."}
+              - {label: "Details", name: "details", widget: "string", required: false, hint: "One short line, like: PDF pattern · US terms · 4ply cotton · 2.25 mm hook"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Main photo", name: "image", widget: "image", required: false}
+              - label: "More photos"
+                name: "more_images"
+                widget: "list"
+                required: false
+                field: {label: "Photo", name: "photo", widget: "image"}
+
   - name: "music"
     label: "Music"
     files:
