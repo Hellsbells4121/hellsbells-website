@@ -51,12 +51,39 @@
       <div class="section-head">
         <div class="tag teal">For sale</div>
         <h2>What is available</h2>
-        <p class="dim">Prices are in Australian dollars. Tap Order and your email opens with the details filled in.</p>
+        <p class="dim">Prices are in Australian dollars. Tap Order and your email opens with the details filled in, or <a href="#order-form">use the order form</a> below.</p>
         <p class="dim"><strong style="color:var(--copper-bright);">Buying more than one piece?</strong> Postage is cheaper when items go in the same parcel. Email me the pieces you would like and where they are going, and I will send you a combined total with the postage saving included.</p>
       </div>
       <div class="grid" id="shop-items">
         <div class="card"><p class="dim">Loading…</p></div>
       </div>
+    </div>
+  </section>
+
+  <section id="order-form">
+    <div class="container">
+      <div class="section-head center" style="max-width:620px; margin:0 auto 20px;">
+        <div class="tag teal">Order form</div>
+        <h2>Send me your order</h2>
+        <p class="dim">Fill this in and it comes straight to me. Already paid with PayPal? Use this too, so I know where to post it.</p>
+      </div>
+      <form class="order-form" name="order" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="order">
+        <p class="hp"><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label for="of-name">Your name</label>
+        <input type="text" id="of-name" name="name" required autocomplete="name">
+        <label for="of-email">Your email</label>
+        <input type="email" id="of-email" name="email" required autocomplete="email">
+        <label for="of-item">What would you like?</label>
+        <input type="text" id="of-item" name="item" list="of-items" required placeholder="Pick one or type your own">
+        <datalist id="of-items"></datalist>
+        <label for="of-address">Postal address (and country)</label>
+        <textarea id="of-address" name="address" required autocomplete="street-address"></textarea>
+        <label for="of-notes">Anything else? (paid with PayPal, colour choices, questions)</label>
+        <textarea id="of-notes" name="notes"></textarea>
+        <button type="submit" class="btn btn-primary">Send my order</button>
+        <div id="order-result" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </section>
 
@@ -110,6 +137,7 @@
 
 <script src="js/main.js"></script>
 <script src="js/shop.js"></script>
+<script src="js/order-form.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

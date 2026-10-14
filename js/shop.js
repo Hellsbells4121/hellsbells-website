@@ -82,7 +82,7 @@
         action = email + '<p class="dim" style="font-size:0.8rem; margin-top:8px;">Postage is extra. Email me where it is going and I will send the total.</p>';
       } else {
         action = '<a href="' + PAYPAL + base + 'AUD" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:12px; display:inline-block;">Pay with PayPal</a> ' + email +
-          '<p class="dim" style="font-size:0.8rem; margin-top:8px;">After paying, please email me your name and postal address so I can post it.</p>';
+          '<p class="dim" style="font-size:0.8rem; margin-top:8px;">After paying, please send the order form below so I know where to post it.</p>';
       }
     } else {
       action = '<a href="' + mailto(name, false) + '" class="btn btn-primary" style="margin-top:12px; display:inline-block;">Ask about this one</a>';
@@ -116,7 +116,7 @@
     actions.innerHTML =
       '<a href="' + PAYPAL + total.toFixed(2) + 'AUD" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:6px; display:inline-block;">Pay ' + money(total) + ' with PayPal</a> ' +
       '<a href="' + mailto(name, true, note) + '" class="btn btn-outline" style="margin-top:6px; display:inline-block;">Order by email</a>' +
-      '<p class="dim" style="font-size:0.8rem; margin-top:8px;">After paying, please email me your name and postal address so I can post it.</p>';
+      '<p class="dim" style="font-size:0.8rem; margin-top:8px;">After paying, please send the order form below so I know where to post it.</p>';
   }
 
   function esc(str) {
