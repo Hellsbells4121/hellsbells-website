@@ -76,6 +76,18 @@
       "description": "Macramé Crochet Shoulder Bag  \nHand‑crafted with durable macramé cord for a textured, boho‑chic finish. Features a woven chain strap, flap closure, and tassel detail. Perfect for everyday wear or as a statement piece for casual outings.",
       "postage_ca": 25,
       "postage_us": 25
+    },
+    {
+      "price": "40",
+      "name": "Grogu",
+      "postage_eu": 22,
+      "status": "Available",
+      "postage_au": 11.5,
+      "image": "/assets/uploads/20261020_130000.jpg",
+      "description": "Grogu joins the lineup!  \nHand‑crocheted with care and a touch of mischief, this little green legend will be part of my 1000‑follower celebration giveaway. He’s ready to bring warmth and a bit of the Force to his new home!",
+      "postage_ca": 22,
+      "category": "Amigurumi",
+      "postage_us": 22
     }
   ]
 }
