@@ -84,9 +84,21 @@
       "status": "Available",
       "postage_au": 11.5,
       "image": "/assets/uploads/20261020_130000.jpg",
-      "description": "Grogu joins the lineup!  \nHand‑crocheted with care and a touch of mischief, this little green legend will be part of my 1000‑follower celebration giveaway. He’s ready to bring warmth and a bit of the Force to his new home!",
+      "description": "Grogu joins the lineup!  \nHand‑crocheted with care and a touch of mischief, this little green legend is looking for a new home.   He’s ready to bring warmth and a bit of the Force to his new home!",
       "postage_ca": 22,
       "category": "Amigurumi",
+      "postage_us": 22
+    },
+    {
+      "price": "25",
+      "name": "Snugglyphant",
+      "postage_eu": 22,
+      "status": "Available",
+      "postage_au": 11.5,
+      "image": "/assets/uploads/babyphant.jpg",
+      "description": "Soft turquoise yarn and a scalloped blanket design make Snugglyphant the ultimate comfort companion. Each stitch is crafted to bring warmth, calm, and a smile — ideal for gifting or cozy nights in.",
+      "postage_ca": 21,
+      "category": "Other handmade",
       "postage_us": 22
     }
   ]
