@@ -65,6 +65,17 @@
       "description": "A cute little sprite wearing a lily pad with flower on its head!",
       "postage_ca": 16,
       "postage_us": 16
+    },
+    {
+      "price": "20",
+      "name": "Boho Bag - with chain handle",
+      "postage_eu": 25,
+      "status": "Available",
+      "postage_au": 16.5,
+      "image": "/assets/uploads/20261020_102241.jpg",
+      "description": "Macramé Crochet Shoulder Bag  \nHand‑crafted with durable macramé cord for a textured, boho‑chic finish. Features a woven chain strap, flap closure, and tassel detail. Perfect for everyday wear or as a statement piece for casual outings.",
+      "postage_ca": 25,
+      "postage_us": 25
     }
   ]
 }
