@@ -27,6 +27,7 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Price", name: "price", widget: "string", required: false, hint: "Just the item price, like $10, then fill in the postage boxes below and the shop adds it. Or write $30 (postage included) for one price. Leave blank if not for sale."}
               - {label: "Status", name: "status", widget: "select", options: ["Available", "Made to order", "Sold", "In progress", "In collection"]}
+              - {label: "Shop section", name: "category", widget: "select", options: ["Amigurumi", "Fashion and accessories", "Other handmade"], default: "Amigurumi", required: false, hint: "Which section of the shop it appears in. Choose Fashion and accessories for bags, clothing and wearables."}
               - {label: "Postage to Australia ($)", name: "postage_au", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 11.70. The shop adds it to the price."}
               - {label: "Postage to USA ($)", name: "postage_us", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 15.75. Leave blank if you do not post there."}
               - {label: "Postage to Canada ($)", name: "postage_ca", widget: "number", value_type: "float", min: 0, required: false, hint: "Type just the number, like 15.75. Australia Post charges Canada the same as the USA. Leave blank if you do not post there."}

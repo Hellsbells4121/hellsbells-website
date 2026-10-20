@@ -21,7 +21,25 @@
       mount.innerHTML = '<div class="card"><p class="dim">Nothing is listed right now. Watch a stream or get in touch to ask what is coming next.</p></div>';
       return;
     }
-    mount.innerHTML = items.map(card).join('');
+    // Group the items into sections by their Category. Items with no category stay in the first section.
+    var groups = {};
+    items.forEach(function (it) {
+      var c = categoryOf(it);
+      (groups[c] = groups[c] || []).push(it);
+    });
+    var names = CATEGORIES.filter(function (c) { return groups[c]; });
+    Object.keys(groups).forEach(function (c) { if (names.indexOf(c) < 0) names.push(c); });
+
+    var jump = names.length > 1
+      ? '<p class="dim" style="margin:0 0 8px;">Jump to: ' + names.map(function (c) {
+          return '<a href="#' + slug(c) + '">' + esc(c) + '</a>';
+        }).join(' · ') + '</p>'
+      : '';
+    mount.innerHTML = jump + names.map(function (c) {
+      return '<div class="shop-category" id="' + slug(c) + '">' +
+        (names.length > 1 ? '<h3 style="margin:32px 0 16px; color:var(--copper-bright);">' + esc(c) + '</h3>' : '') +
+        '<div class="grid">' + groups[c].map(card).join('') + '</div></div>';
+    }).join('');
     Array.prototype.forEach.call(mount.querySelectorAll('select[data-dest]'), function (sel) {
       sel.addEventListener('change', function () { update(sel.closest('.card')); });
     });
@@ -30,6 +48,14 @@
     console.error('Could not load shop content:', err);
     mount.innerHTML = '<div class="card"><p class="dim">The shop could not load just now. Please try again, or email ' + EMAIL + ' to order.</p></div>';
   });
+
+  // Shop sections, in the order they appear. The names must match the Category options in admin/config.yml.
+  var CATEGORIES = ['Amigurumi', 'Fashion and accessories', 'Other handmade'];
+  function categoryOf(item) {
+    var c = String(item.category || '').trim();
+    return c || CATEGORIES[0];
+  }
+  function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
 
   function money(n) { return '$' + n.toFixed(2); }
   // Postage prices typed on the item itself.
